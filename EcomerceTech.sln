@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcomerceTech", "EcomerceTech\EcomerceTech.csproj", "{C36BC2B0-5E7C-4A9E-A203-EA2C293D9852}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{EAFE485C-4669-4A5A-AD0F-155ED80DFD49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{699A73CD-97E3-45AA-ADDE-D011AD61D3ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C36BC2B0-5E7C-4A9E-A203-EA2C293D9852}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C36BC2B0-5E7C-4A9E-A203-EA2C293D9852}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C36BC2B0-5E7C-4A9E-A203-EA2C293D9852}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C36BC2B0-5E7C-4A9E-A203-EA2C293D9852}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAFE485C-4669-4A5A-AD0F-155ED80DFD49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAFE485C-4669-4A5A-AD0F-155ED80DFD49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAFE485C-4669-4A5A-AD0F-155ED80DFD49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAFE485C-4669-4A5A-AD0F-155ED80DFD49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{699A73CD-97E3-45AA-ADDE-D011AD61D3ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{699A73CD-97E3-45AA-ADDE-D011AD61D3ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{699A73CD-97E3-45AA-ADDE-D011AD61D3ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{699A73CD-97E3-45AA-ADDE-D011AD61D3ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27E0C9C7-9E5A-421E-81D4-B8BA7BDF95FC}
+	EndGlobalSection
+EndGlobal
