@@ -17,19 +17,22 @@ namespace Entidades.Modelo
         }
         public List<Producto> Productos { get => productos; set => productos = value; }
 
-        public void Agregar()
+        /// <summary>
+        /// Agrega un producto
+        /// </summary>
+        /// <param name="prod"></param>
+        public void Agregar(Producto prod)
         {
-            throw new NotImplementedException();
+            this.productos.Add(prod);
         }
 
-        public void Modificar()
+        /// <summary>
+        /// Elimina un producto que se encuentre en stock
+        /// </summary>
+        /// <param name="prod"></param>
+        public void Eliminar(Producto prod)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Eliminar()
-        {
-            throw new NotImplementedException();
+            this.productos.Remove(prod);
         }
 
     }

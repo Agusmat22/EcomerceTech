@@ -6,8 +6,8 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            Producto p1 = new Producto(1,"Motorala",1154,"2gb");
-            Producto p2 = new Producto(2,"Motorala",1154,"2gb");
+            Producto p1 = new Producto(1,"Motorala",1154,ETipo.notebook);
+            Producto p2 = new Producto(2,"Motorala",1154,ETipo.tv);
             /*
             ETipo[] lista = (ETipo[])Enum.GetValues(typeof(ETipo));
 
