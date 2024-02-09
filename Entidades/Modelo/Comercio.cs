@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades.Db;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,7 @@ namespace Entidades.Modelo
         public void Agregar(Producto prod)
         {
             this.productos.Add(prod);
+            ADOProducto.Guardar(prod);
         }
 
         /// <summary>

@@ -489,19 +489,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\usuario\\.nuget\\packages\\": {}
+    "C:\\Users\\Lisandro\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\usuario\\Desktop\\Practice\\EcomerceTech\\EcomerceTech\\EcomerceTech.csproj",
+      "projectUniqueName": "C:\\Users\\Lisandro\\Desktop\\EcomerceTech\\EcomerceTech\\EcomerceTech.csproj",
       "projectName": "EcomerceTech",
-      "projectPath": "C:\\Users\\usuario\\Desktop\\Practice\\EcomerceTech\\EcomerceTech\\EcomerceTech.csproj",
-      "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\usuario\\Desktop\\Practice\\EcomerceTech\\EcomerceTech\\obj\\",
+      "projectPath": "C:\\Users\\Lisandro\\Desktop\\EcomerceTech\\EcomerceTech\\EcomerceTech.csproj",
+      "packagesPath": "C:\\Users\\Lisandro\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lisandro\\Desktop\\EcomerceTech\\EcomerceTech\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Lisandro\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -515,8 +515,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\usuario\\Desktop\\Practice\\EcomerceTech\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\usuario\\Desktop\\Practice\\EcomerceTech\\Entidades\\Entidades.csproj"
+            "C:\\Users\\Lisandro\\Desktop\\EcomerceTech\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\Lisandro\\Desktop\\EcomerceTech\\Entidades\\Entidades.csproj"
             }
           }
         }

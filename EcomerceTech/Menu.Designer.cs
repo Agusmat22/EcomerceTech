@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             btnProductos = new Button();
-            btnRegistrar = new Button();
             btnSalir = new Button();
             label1 = new Label();
+            btnVentas = new Button();
             SuspendLayout();
             // 
             // btnProductos
@@ -43,16 +43,7 @@
             btnProductos.TabIndex = 0;
             btnProductos.Text = "Productos";
             btnProductos.UseVisualStyleBackColor = true;
-            // 
-            // btnRegistrar
-            // 
-            btnRegistrar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnRegistrar.Location = new Point(12, 80);
-            btnRegistrar.Name = "btnRegistrar";
-            btnRegistrar.Size = new Size(238, 49);
-            btnRegistrar.TabIndex = 1;
-            btnRegistrar.Text = "Registrar";
-            btnRegistrar.UseVisualStyleBackColor = true;
+            btnProductos.Click += btnProductos_Click;
             // 
             // btnSalir
             // 
@@ -63,30 +54,44 @@
             btnSalir.TabIndex = 2;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BorderStyle = BorderStyle.Fixed3D;
             label1.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(470, 50);
+            label1.Location = new Point(445, 22);
             label1.Name = "label1";
             label1.Size = new Size(161, 39);
             label1.TabIndex = 3;
             label1.Text = "Ecommerce";
+            // 
+            // btnVentas
+            // 
+            btnVentas.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVentas.Location = new Point(12, 76);
+            btnVentas.Name = "btnVentas";
+            btnVentas.Size = new Size(238, 49);
+            btnVentas.TabIndex = 4;
+            btnVentas.Text = "Ventas";
+            btnVentas.UseVisualStyleBackColor = true;
+            btnVentas.Click += btnVentas_Click;
             // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnVentas);
             Controls.Add(label1);
             Controls.Add(btnSalir);
-            Controls.Add(btnRegistrar);
             Controls.Add(btnProductos);
             Name = "Menu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";
+            FormClosing += Menu_FormClosing;
+            Load += Menu_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -94,8 +99,8 @@
         #endregion
 
         private Button btnProductos;
-        private Button btnRegistrar;
         private Button btnSalir;
         private Label label1;
+        private Button btnVentas;
     }
 }

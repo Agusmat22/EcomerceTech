@@ -1,4 +1,5 @@
-﻿using Entidades.Modelo;
+﻿using Entidades.Db;
+using Entidades.Modelo;
 
 namespace Test
 {
@@ -6,15 +7,11 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            Producto p1 = new Producto(1,"Motorala",1154,ETipo.notebook);
-            Producto p2 = new Producto(2,"Motorala",1154,ETipo.tv);
-            /*
-            ETipo[] lista = (ETipo[])Enum.GetValues(typeof(ETipo));
+            Producto p1 = new Producto("Dell I7",1154.44,ETipo.notebook,4);
 
-            foreach (ETipo item in lista)
-            {
-                Console.WriteLine((int)item);
-            }*/
+            List<Producto> productos = ADOProducto.Obtener();
+
+            Console.WriteLine(productos.Count);
         }
     }
 }
