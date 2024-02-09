@@ -32,6 +32,7 @@
             btnSalir = new Button();
             label1 = new Label();
             btnVentas = new Button();
+            btnVender = new Button();
             SuspendLayout();
             // 
             // btnProductos
@@ -61,7 +62,7 @@
             label1.AutoSize = true;
             label1.BorderStyle = BorderStyle.Fixed3D;
             label1.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(445, 22);
+            label1.Location = new Point(457, 76);
             label1.Name = "label1";
             label1.Size = new Size(161, 39);
             label1.TabIndex = 3;
@@ -78,11 +79,26 @@
             btnVentas.UseVisualStyleBackColor = true;
             btnVentas.Click += btnVentas_Click;
             // 
+            // btnVender
+            // 
+            btnVender.BackColor = Color.Green;
+            btnVender.Cursor = Cursors.Hand;
+            btnVender.FlatAppearance.BorderSize = 0;
+            btnVender.FlatStyle = FlatStyle.Flat;
+            btnVender.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVender.Location = new Point(742, 15);
+            btnVender.Name = "btnVender";
+            btnVender.Size = new Size(46, 46);
+            btnVender.TabIndex = 5;
+            btnVender.Text = "$";
+            btnVender.UseVisualStyleBackColor = false;
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnVender);
             Controls.Add(btnVentas);
             Controls.Add(label1);
             Controls.Add(btnSalir);
@@ -102,5 +118,6 @@
         private Button btnSalir;
         private Label label1;
         private Button btnVentas;
+        private Button btnVender;
     }
 }

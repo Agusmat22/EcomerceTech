@@ -75,6 +75,59 @@ namespace Entidades.Db
         
         }
 
+        public static Producto Obtener(int idProducto)
+        {
+
+            Producto producto = new Producto();
+
+            try
+            {
+                string query = "SELECT * FROM Producto WHERE Id=@IdProducto";
+
+                using (SqlConnection sqlConnection = new SqlConnection(ADOProducto.stringConnection))
+                {
+
+                    SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                    sqlCommand.Parameters.AddWithValue("IdProducto", idProducto);
+
+                    sqlConnection.Open();
+
+                    SqlDataReader reader = sqlCommand.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            int id = reader.GetInt32(0);
+                            string nombre = reader.GetString(1);
+                            double precio = reader.GetDouble(2);
+
+                            if (!Enum.TryParse(reader.GetString(3), out ETipo tipo))
+                            {
+                                throw new ArgumentNullException("Error TIPO INVALID");
+                            }
+
+                            int stock = reader.GetInt32(4);
+
+                            producto =  new Producto(id, nombre, precio, tipo, stock);
+                        }
+
+                    }
+
+
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return producto;
+
+
+        }
+
         public static void Guardar(Producto producto)
         {
 

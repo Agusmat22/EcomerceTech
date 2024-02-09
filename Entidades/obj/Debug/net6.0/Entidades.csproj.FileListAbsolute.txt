@@ -22,3 +22,5 @@ C:\Users\Lisandro\Desktop\EcomerceTech\Entidades\obj\Debug\net6.0\Entidades.dll
 C:\Users\Lisandro\Desktop\EcomerceTech\Entidades\obj\Debug\net6.0\refint\Entidades.dll
 C:\Users\Lisandro\Desktop\EcomerceTech\Entidades\obj\Debug\net6.0\Entidades.pdb
 C:\Users\Lisandro\Desktop\EcomerceTech\Entidades\obj\Debug\net6.0\ref\Entidades.dll
+C:\Users\usuario\Desktop\Practice\EcomerceTech\Entidades\obj\Debug\net6.0\Entidades.csproj.AssemblyReference.cache
+C:\Users\usuario\Desktop\Practice\EcomerceTech\Entidades\obj\Debug\net6.0\Entidades.sourcelink.json

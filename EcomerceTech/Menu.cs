@@ -23,7 +23,8 @@ namespace EcomerceTech
             try
             {
                 List<Producto> productos = ADOProducto.Obtener();
-                this.comercio = new Comercio(productos);
+                List<Venta> ventas = ADOVenta.Obtener();
+                this.comercio = new Comercio(productos, ventas);
 
                 //agrego mi metodo agregar al delegado para pasar este delegado entre las clases
                 this.agregarProducto = comercio.Agregar;
@@ -68,7 +69,7 @@ namespace EcomerceTech
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            FormVentas formVentas = new FormVentas();
+            FormVentas formVentas = new FormVentas(this.comercio);
 
            formVentas.Show();
             this.Hide();

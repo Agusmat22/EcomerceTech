@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,8 @@ namespace EcomerceTech
         {
             if ( nombre != "" && precio > -1)
             {
+                MessageBox.Show(precio.ToString("0.00", CultureInfo.InvariantCulture));
+
                 this.producto = new Producto(nombre, precio, tipo, stock);
 
                 this.DialogResult = DialogResult.OK;
@@ -74,7 +77,7 @@ namespace EcomerceTech
 
             foreach (char c in textBox.Text)
             {
-                if (char.IsDigit(c) || c == 44)
+                if (char.IsDigit(c) || c == 46)
                 {
                     textValido += c;
                 }

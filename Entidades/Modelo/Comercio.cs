@@ -10,13 +10,16 @@ namespace Entidades.Modelo
     public class Comercio
     {
         private List<Producto> productos;
+        private List<Venta> ventas;
 
 
-        public Comercio(List<Producto> productos)
+        public Comercio(List<Producto> productos, List<Venta> ventas)
         {
             this.productos = productos;
+            this.ventas = ventas;
         }
         public List<Producto> Productos { get => productos; set => productos = value; }
+        public List<Venta> Ventas { get => ventas; set => ventas = value; }
 
         /// <summary>
         /// Agrega un producto
