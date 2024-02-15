@@ -43,11 +43,12 @@ namespace Entidades.Db
                         { 
                             int id = Convert.ToInt32(reader["Id"]);
                             int productoId = Convert.ToInt32(reader["Producto_Id"]);
-                            DateTime fecha = Convert.ToDateTime(reader["Fecha"]);
+                            DateTime fecha = Convert.ToDateTime(reader["Fecha"]).Date;
+                            int cantidad = Convert.ToInt32(reader["Cantidad"]);
 
                             Producto prod = ADOProducto.Obtener(id);
 
-                            ventas.Add(new Venta(id, productoId, fecha, prod));
+                            ventas.Add(new Venta(id, productoId, fecha, prod, cantidad));
 
 
                         }
@@ -63,5 +64,35 @@ namespace Entidades.Db
 
             return ventas;
         }
+
+        public static void Guardar(Venta venta)
+        {
+            try
+            {
+
+                string query = "INSERT INTO Venta (Producto_Id, Fecha, Cantidad) VALUES (@Producto_Id, @Fecha, @Cantidad)";
+
+
+                using (SqlConnection sqlConnection = new SqlConnection(ADOVenta.stringConnection))
+                {
+                    SqlCommand sqlCommand = new SqlCommand(query,sqlConnection);
+
+                    sqlCommand.Parameters.AddWithValue("Producto_Id", venta.ProductoId);
+                    sqlCommand.Parameters.AddWithValue("Fecha", venta.Fecha);
+                    sqlCommand.Parameters.AddWithValue("Cantidad", venta.Cantidad);
+
+
+                    sqlConnection.Open();
+
+                    sqlCommand.ExecuteNonQuery();   
+                }
+    
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
+  
 }

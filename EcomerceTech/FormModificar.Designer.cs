@@ -30,7 +30,7 @@
         {
             cmbTipo = new ComboBox();
             btnCancelar = new Button();
-            btnRegistar = new Button();
+            btnModificar = new Button();
             txtStock = new TextBox();
             txtPrecio = new TextBox();
             txtNombre = new TextBox();
@@ -46,6 +46,7 @@
             cmbTipo.Name = "cmbTipo";
             cmbTipo.Size = new Size(215, 28);
             cmbTipo.TabIndex = 13;
+            cmbTipo.SelectedIndexChanged += cmbTipo_SelectedIndexChanged;
             // 
             // btnCancelar
             // 
@@ -56,16 +57,18 @@
             btnCancelar.TabIndex = 12;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
-            // btnRegistar
+            // btnModificar
             // 
-            btnRegistar.Cursor = Cursors.Hand;
-            btnRegistar.Location = new Point(83, 342);
-            btnRegistar.Name = "btnRegistar";
-            btnRegistar.Size = new Size(86, 41);
-            btnRegistar.TabIndex = 11;
-            btnRegistar.Text = "Modificar";
-            btnRegistar.UseVisualStyleBackColor = true;
+            btnModificar.Cursor = Cursors.Hand;
+            btnModificar.Location = new Point(83, 342);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(86, 41);
+            btnModificar.TabIndex = 11;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // txtStock
             // 
@@ -75,6 +78,7 @@
             txtStock.PlaceholderText = "Stock";
             txtStock.Size = new Size(215, 27);
             txtStock.TabIndex = 10;
+            txtStock.TextChanged += txtStock_TextChanged;
             // 
             // txtPrecio
             // 
@@ -84,6 +88,7 @@
             txtPrecio.PlaceholderText = "Precio";
             txtPrecio.Size = new Size(215, 27);
             txtPrecio.TabIndex = 9;
+            txtPrecio.TextChanged += txtPrecio_TextChanged;
             // 
             // txtNombre
             // 
@@ -93,6 +98,7 @@
             txtNombre.PlaceholderText = "Nombre";
             txtNombre.Size = new Size(215, 27);
             txtNombre.TabIndex = 8;
+            txtNombre.TextChanged += txtNombre_TextChanged;
             // 
             // label1
             // 
@@ -111,13 +117,14 @@
             ClientSize = new Size(419, 395);
             Controls.Add(cmbTipo);
             Controls.Add(btnCancelar);
-            Controls.Add(btnRegistar);
+            Controls.Add(btnModificar);
             Controls.Add(txtStock);
             Controls.Add(txtPrecio);
             Controls.Add(txtNombre);
             Controls.Add(label1);
             Name = "FormModificar";
             Text = "FormModificar";
+            Load += FormModificar_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -126,7 +133,7 @@
 
         private ComboBox cmbTipo;
         private Button btnCancelar;
-        private Button btnRegistar;
+        private Button btnModificar;
         private TextBox txtStock;
         private TextBox txtPrecio;
         private TextBox txtNombre;

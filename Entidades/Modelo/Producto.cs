@@ -9,7 +9,7 @@ namespace Entidades.Modelo
 {
     public enum ETipo
     {
-        notebook,
+        notebook = 0,
         smartphone,
         tv,
         pc

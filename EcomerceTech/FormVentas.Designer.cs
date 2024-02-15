@@ -44,6 +44,7 @@
             label3 = new Label();
             textBox2 = new TextBox();
             monthCalendar1 = new MonthCalendar();
+            btnVolver = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvVentas).BeginInit();
             SuspendLayout();
             // 
@@ -171,11 +172,27 @@
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 9;
             // 
+            // btnVolver
+            // 
+            btnVolver.BackColor = SystemColors.ActiveCaption;
+            btnVolver.Cursor = Cursors.Hand;
+            btnVolver.FlatAppearance.BorderSize = 0;
+            btnVolver.FlatStyle = FlatStyle.Flat;
+            btnVolver.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVolver.Location = new Point(12, 12);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(40, 31);
+            btnVolver.TabIndex = 19;
+            btnVolver.Text = "<--";
+            btnVolver.UseVisualStyleBackColor = false;
+            btnVolver.Click += btnVolver_Click;
+            // 
             // FormVentas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(855, 532);
+            Controls.Add(btnVolver);
             Controls.Add(monthCalendar1);
             Controls.Add(label3);
             Controls.Add(textBox2);
@@ -189,6 +206,7 @@
             Name = "FormVentas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Ventas";
+            FormClosing += FormVentas_FormClosing;
             Load += FormVentas_Load;
             ((System.ComponentModel.ISupportInitialize)dgvVentas).EndInit();
             ResumeLayout(false);
@@ -209,5 +227,6 @@
         private DataGridViewTextBoxColumn Precio;
         private DataGridViewTextBoxColumn Tipo;
         private DataGridViewTextBoxColumn Fecha;
+        private Button btnVolver;
     }
 }

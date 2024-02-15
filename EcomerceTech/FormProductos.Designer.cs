@@ -41,6 +41,7 @@
             btnVolver = new Button();
             btnAgregar = new Button();
             btnBorrar = new Button();
+            btnModificar = new Button();
             SuspendLayout();
             // 
             // label1
@@ -190,11 +191,28 @@
             btnBorrar.UseVisualStyleBackColor = false;
             btnBorrar.Click += btnBorrar_Click;
             // 
+            // btnModificar
+            // 
+            btnModificar.BackColor = Color.DarkSlateGray;
+            btnModificar.Cursor = Cursors.Hand;
+            btnModificar.FlatAppearance.BorderSize = 0;
+            btnModificar.FlatStyle = FlatStyle.Flat;
+            btnModificar.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            btnModificar.ForeColor = SystemColors.ButtonHighlight;
+            btnModificar.Location = new Point(652, 27);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(38, 38);
+            btnModificar.TabIndex = 13;
+            btnModificar.Text = "M";
+            btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
+            // 
             // FormProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnModificar);
             Controls.Add(btnBorrar);
             Controls.Add(btnAgregar);
             Controls.Add(btnVolver);
@@ -233,5 +251,6 @@
         private Button btnVolver;
         private Button btnAgregar;
         private Button btnBorrar;
+        private Button btnModificar;
     }
 }

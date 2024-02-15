@@ -15,11 +15,13 @@ namespace EcomerceTech
     {
 
         private readonly Comercio comercio;
+        private Menu menu;
 
-        public FormVentas(Comercio comercio)
+        public FormVentas(Comercio comercio, Menu menu)
         {
             InitializeComponent();
             this.comercio = comercio;
+            this.menu = menu;
         }
 
         private void FormVentas_Load(object sender, EventArgs e)
@@ -64,6 +66,18 @@ namespace EcomerceTech
         private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.ActualizarDgv((venta) => venta.ProductoAsociado.Tipo == (ETipo)this.cmbTipo.SelectedItem);
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.menu.Show();
+            this.Close();
+
+        }
+
+        private void FormVentas_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.menu.Show();
         }
     }
 }

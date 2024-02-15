@@ -60,3 +60,4 @@ C:\Users\usuario\Desktop\Practice\EcomerceTech\EcomerceTech\obj\Debug\net6.0-win
 C:\Users\usuario\Desktop\Practice\EcomerceTech\EcomerceTech\obj\Debug\net6.0-windows\EcomerceTech.FormVentas.resources
 C:\Users\usuario\Desktop\Practice\EcomerceTech\EcomerceTech\obj\Debug\net6.0-windows\EcomerceTech.Menu.resources
 C:\Users\usuario\Desktop\Practice\EcomerceTech\EcomerceTech\obj\Debug\net6.0-windows\EcomerceTech.sourcelink.json
+C:\Users\usuario\Desktop\Practice\EcomerceTech\EcomerceTech\obj\Debug\net6.0-windows\EcomerceTech.FormVender.resources

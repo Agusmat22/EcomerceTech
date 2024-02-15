@@ -5,6 +5,7 @@ namespace EcomerceTech
 {
     public delegate void AgregarProducto(Producto prod);
     public delegate void EliminarProducto(Producto prod);
+    public delegate void ActualizarProducto(Producto prod);
 
 
     public partial class Menu : Form
@@ -12,6 +13,7 @@ namespace EcomerceTech
         private Comercio comercio;
         private AgregarProducto agregarProducto;
         private EliminarProducto eliminarProducto;
+        private ActualizarProducto actualizarProducto;
 
         public Menu()
         {
@@ -29,6 +31,7 @@ namespace EcomerceTech
                 //agrego mi metodo agregar al delegado para pasar este delegado entre las clases
                 this.agregarProducto = comercio.Agregar;
                 this.eliminarProducto = comercio.Eliminar;
+                this.actualizarProducto = comercio.Modificar;
 
             }
             catch (Exception ex)
@@ -60,7 +63,7 @@ namespace EcomerceTech
         private void btnProductos_Click(object sender, EventArgs e)
         {
             FormProductos formProductos = new FormProductos(this.comercio.Productos, this,
-                                                            this.agregarProducto, this.eliminarProducto);
+                                                            this.agregarProducto, this.eliminarProducto, this.actualizarProducto);
 
             this.Hide();
 
@@ -69,10 +72,17 @@ namespace EcomerceTech
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            FormVentas formVentas = new FormVentas(this.comercio);
+            FormVentas formVentas = new FormVentas(this.comercio,this);
 
-           formVentas.Show();
+            formVentas.Show();
             this.Hide();
+        }
+
+        private void btnVender_Click(object sender, EventArgs e)
+        {
+            FormVender formVender = new FormVender(this.comercio, this);
+            this.Hide();
+            formVender.Show();
         }
     }
 }

@@ -92,6 +92,7 @@
             btnVender.TabIndex = 5;
             btnVender.Text = "$";
             btnVender.UseVisualStyleBackColor = false;
+            btnVender.Click += btnVender_Click;
             // 
             // Menu
             // 

@@ -1,4 +1,5 @@
 ﻿using Entidades.Db;
+using Entidades.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entidades.Modelo
 {
-    public class Comercio
+    public class Comercio: IAfip
     {
         private List<Producto> productos;
         private List<Venta> ventas;
@@ -40,5 +41,39 @@ namespace Entidades.Modelo
             this.productos.Remove(prod);
         }
 
+        public void Modificar(Producto prod)
+        {
+            try
+            {
+                ADOProducto.Actualizar(prod);
+
+            }
+            catch (Exception) 
+            {
+                throw;
+            }
+        }
+
+        
+        //FALTA TERMINAR LA LOGICA
+        public string Ticket(Venta venta)
+        {
+      
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"Producto: {venta.Nombre}");
+            sb.AppendLine($"Cantidad: {venta.Cantidad}");
+            sb.AppendLine($"Precio neto: ${venta.Precio}");
+            sb.AppendLine($"Impuesto 21%: ${this.CalcularIva(venta.Precio)}");
+            sb.AppendLine($"Precio total: ${venta.Precio + this.CalcularIva(venta.Precio)}");
+
+            return sb.ToString();
+                     
+        }
+
+        public double CalcularIva(double precio)
+        {
+            return precio * 0.21;
+        }
     }
 }

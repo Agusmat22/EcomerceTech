@@ -18,15 +18,17 @@ namespace EcomerceTech
         private Producto productoSeleccionado;
         private AgregarProducto agregarProducto;
         private EliminarProducto eliminarProducto;
+        private ActualizarProducto actualizarProducto;
 
         public FormProductos(List<Producto> producto, Menu formMenu,
-                             AgregarProducto agregarProducto, EliminarProducto eliminarProducto)
+                             AgregarProducto agregarProducto, EliminarProducto eliminarProducto, ActualizarProducto actualizarProducto )
         {
             InitializeComponent();
             this.productos = producto;
             this.formMenu = formMenu;
             this.agregarProducto = agregarProducto;
             this.eliminarProducto = eliminarProducto;
+            this.actualizarProducto = actualizarProducto;
         }
 
         private void FormProductos_Load(object sender, EventArgs e)
@@ -51,6 +53,9 @@ namespace EcomerceTech
             this.productoSeleccionado = (Producto)this.lstTiposProductos.SelectedItem;
 
             ActualizarCampos();
+
+
+
 
         }
 
@@ -105,6 +110,19 @@ namespace EcomerceTech
             {
                 this.eliminarProducto((Producto)this.lstTiposProductos.SelectedItem);
 
+                this.ActualizarListBox();
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            FormModificar formModificar = new FormModificar(this.productoSeleccionado);
+  
+            DialogResult result = formModificar.ShowDialog();
+            
+            if (result == DialogResult.OK) 
+            {
+                this.actualizarProducto( formModificar.Producto );
                 this.ActualizarListBox();
             }
         }

@@ -159,6 +159,33 @@ namespace Entidades.Db
 
         }
 
+        public static void Actualizar(Producto producto) 
+        { 
+            try
+            {
+                string query = "UPDATE Producto SET Nombre=@Nombre, Precio=@Precio, Tipo=@Tipo, Stock=@Stock WHERE Id=@id";
+
+                using (SqlConnection sqlConnection = new SqlConnection(ADOProducto.stringConnection))
+                {
+                    SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                    sqlCommand.Parameters.AddWithValue("Nombre", producto.Nombre);
+                    sqlCommand.Parameters.AddWithValue("Precio", producto.Precio);
+                    sqlCommand.Parameters.AddWithValue("Tipo", producto.Tipo);
+                    sqlCommand.Parameters.AddWithValue("Stock", producto.Stock);
+                    sqlCommand.Parameters.AddWithValue("id", producto.Id);
+
+                    sqlConnection.Open();
+
+                    sqlCommand.ExecuteNonQuery();
+                }
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+            
+        }
+
         public static void Eliminar(Producto producto)
         {
 
