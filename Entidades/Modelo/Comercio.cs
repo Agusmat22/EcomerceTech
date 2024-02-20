@@ -39,6 +39,7 @@ namespace Entidades.Modelo
         public void Eliminar(Producto prod)
         {
             this.productos.Remove(prod);
+            ADOProducto.Eliminar(prod); 
         }
 
         public void Modificar(Producto prod)
@@ -74,6 +75,12 @@ namespace Entidades.Modelo
         public double CalcularIva(double precio)
         {
             return precio * 0.21;
+        }
+
+        public void Vender(Venta venta)
+        {
+            this.ventas.Add(venta);
+            ADOVenta.Guardar(venta);
         }
     }
 }

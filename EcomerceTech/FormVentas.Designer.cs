@@ -34,17 +34,18 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             label1 = new Label();
             dgvVentas = new DataGridView();
+            txtTotal = new TextBox();
+            label2 = new Label();
+            cmbTipo = new ComboBox();
+            label3 = new Label();
+            txtCantidad = new TextBox();
+            monthCalendar1 = new MonthCalendar();
+            btnVolver = new Button();
+            btnBorrar = new Button();
             Nombre = new DataGridViewTextBoxColumn();
             Precio = new DataGridViewTextBoxColumn();
             Tipo = new DataGridViewTextBoxColumn();
             Fecha = new DataGridViewTextBoxColumn();
-            textBox1 = new TextBox();
-            label2 = new Label();
-            cmbTipo = new ComboBox();
-            label3 = new Label();
-            textBox2 = new TextBox();
-            monthCalendar1 = new MonthCalendar();
-            btnVolver = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvVentas).BeginInit();
             SuspendLayout();
             // 
@@ -71,62 +72,25 @@
             dgvVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvVentas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvVentas.Columns.AddRange(new DataGridViewColumn[] { Nombre, Precio, Tipo, Fecha });
-            dgvVentas.Enabled = false;
             dgvVentas.EnableHeadersVisualStyles = false;
             dgvVentas.Location = new Point(12, 114);
             dgvVentas.MultiSelect = false;
             dgvVentas.Name = "dgvVentas";
             dgvVentas.ReadOnly = true;
-            dgvVentas.RightToLeft = RightToLeft.No;
-            dgvVentas.RowHeadersVisible = false;
             dgvVentas.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgvVentas.RowTemplate.Height = 25;
-            dgvVentas.Size = new Size(567, 355);
+            dgvVentas.Size = new Size(582, 355);
             dgvVentas.TabIndex = 0;
+            dgvVentas.CellContentClick += dgvVentas_CellContentClick;
             // 
-            // Nombre
+            // txtTotal
             // 
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            Nombre.DefaultCellStyle = dataGridViewCellStyle2;
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            Nombre.ReadOnly = true;
-            Nombre.Resizable = DataGridViewTriState.False;
-            Nombre.Width = 199;
-            // 
-            // Precio
-            // 
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            Precio.DefaultCellStyle = dataGridViewCellStyle3;
-            Precio.HeaderText = "Precio";
-            Precio.Name = "Precio";
-            Precio.ReadOnly = true;
-            Precio.Resizable = DataGridViewTriState.False;
-            Precio.Width = 120;
-            // 
-            // Tipo
-            // 
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            Tipo.DefaultCellStyle = dataGridViewCellStyle4;
-            Tipo.HeaderText = "Tipo";
-            Tipo.Name = "Tipo";
-            Tipo.ReadOnly = true;
-            Tipo.Width = 145;
-            // 
-            // Fecha
-            // 
-            Fecha.HeaderText = "Fecha";
-            Fecha.Name = "Fecha";
-            Fecha.ReadOnly = true;
-            // 
-            // textBox1
-            // 
-            textBox1.Enabled = false;
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(434, 491);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(145, 29);
-            textBox1.TabIndex = 2;
+            txtTotal.Enabled = false;
+            txtTotal.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTotal.Location = new Point(434, 491);
+            txtTotal.Name = "txtTotal";
+            txtTotal.Size = new Size(145, 29);
+            txtTotal.TabIndex = 2;
             // 
             // label2
             // 
@@ -142,7 +106,7 @@
             cmbTipo.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTipo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cmbTipo.FormattingEnabled = true;
-            cmbTipo.Location = new Point(591, 114);
+            cmbTipo.Location = new Point(600, 114);
             cmbTipo.Name = "cmbTipo";
             cmbTipo.Size = new Size(248, 29);
             cmbTipo.TabIndex = 5;
@@ -157,18 +121,18 @@
             label3.TabIndex = 7;
             label3.Text = "Cantidad:";
             // 
-            // textBox2
+            // txtCantidad
             // 
-            textBox2.Enabled = false;
-            textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(251, 491);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(111, 29);
-            textBox2.TabIndex = 6;
+            txtCantidad.Enabled = false;
+            txtCantidad.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCantidad.Location = new Point(251, 491);
+            txtCantidad.Name = "txtCantidad";
+            txtCantidad.Size = new Size(111, 29);
+            txtCantidad.TabIndex = 6;
             // 
             // monthCalendar1
             // 
-            monthCalendar1.Location = new Point(591, 226);
+            monthCalendar1.Location = new Point(600, 226);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 9;
             // 
@@ -187,18 +151,69 @@
             btnVolver.UseVisualStyleBackColor = false;
             btnVolver.Click += btnVolver_Click;
             // 
+            // btnBorrar
+            // 
+            btnBorrar.BackColor = Color.Crimson;
+            btnBorrar.Cursor = Cursors.Hand;
+            btnBorrar.FlatAppearance.BorderSize = 0;
+            btnBorrar.FlatStyle = FlatStyle.Flat;
+            btnBorrar.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBorrar.ForeColor = SystemColors.ButtonHighlight;
+            btnBorrar.Location = new Point(801, 22);
+            btnBorrar.Name = "btnBorrar";
+            btnBorrar.Size = new Size(38, 38);
+            btnBorrar.TabIndex = 20;
+            btnBorrar.Text = "-";
+            btnBorrar.UseVisualStyleBackColor = false;
+            // 
+            // Nombre
+            // 
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Nombre.DefaultCellStyle = dataGridViewCellStyle2;
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            Nombre.ReadOnly = true;
+            Nombre.Resizable = DataGridViewTriState.False;
+            Nombre.Width = 185;
+            // 
+            // Precio
+            // 
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Precio.DefaultCellStyle = dataGridViewCellStyle3;
+            Precio.HeaderText = "Precio";
+            Precio.Name = "Precio";
+            Precio.ReadOnly = true;
+            Precio.Resizable = DataGridViewTriState.False;
+            Precio.Width = 120;
+            // 
+            // Tipo
+            // 
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Tipo.DefaultCellStyle = dataGridViewCellStyle4;
+            Tipo.HeaderText = "Tipo";
+            Tipo.Name = "Tipo";
+            Tipo.ReadOnly = true;
+            Tipo.Width = 140;
+            // 
+            // Fecha
+            // 
+            Fecha.HeaderText = "Fecha";
+            Fecha.Name = "Fecha";
+            Fecha.ReadOnly = true;
+            // 
             // FormVentas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(855, 532);
+            Controls.Add(btnBorrar);
             Controls.Add(btnVolver);
             Controls.Add(monthCalendar1);
             Controls.Add(label3);
-            Controls.Add(textBox2);
+            Controls.Add(txtCantidad);
             Controls.Add(cmbTipo);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(txtTotal);
             Controls.Add(dgvVentas);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -217,16 +232,17 @@
 
         private Label label1;
         private DataGridView dgvVentas;
-        private TextBox textBox1;
+        private TextBox txtTotal;
         private Label label2;
         private ComboBox cmbTipo;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox txtCantidad;
         private MonthCalendar monthCalendar1;
+        private Button btnVolver;
+        private Button btnBorrar;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Precio;
         private DataGridViewTextBoxColumn Tipo;
         private DataGridViewTextBoxColumn Fecha;
-        private Button btnVolver;
     }
 }

@@ -101,9 +101,9 @@ namespace EcomerceTech
         {
             try
             {
-                ADOVenta.Guardar(venta);
+                this.comercio.Vender(venta);
 
-                MessageBox.Show("Venta exitosa, desea imprimir el ticket?");
+                DialogResult result = MessageBox.Show("Venta exitosa, desea imprimir el ticket?","Confirmar",MessageBoxButtons.YesNo);
 
             }
             catch(Exception ex)

@@ -65,7 +65,7 @@ namespace EcomerceTech
             {
                 this.txtProducto.Text = this.productoSeleccionado.Nombre;
                 this.txtTipo.Text = this.productoSeleccionado.Tipo.ToString();
-                this.txtPrecio.Text = this.productoSeleccionado.Precio.ToString();
+                this.txtPrecio.Text = this.productoSeleccionado.Precio.ToString("F2");
                 this.txtStock.Text = this.productoSeleccionado.Stock.ToString();
             }
         }

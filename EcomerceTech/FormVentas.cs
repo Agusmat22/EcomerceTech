@@ -16,6 +16,7 @@ namespace EcomerceTech
 
         private readonly Comercio comercio;
         private Menu menu;
+        private Producto productoSeleccionado;
 
         public FormVentas(Comercio comercio, Menu menu)
         {
@@ -29,6 +30,8 @@ namespace EcomerceTech
 
             this.cmbTipo.DataSource = Enum.GetValues(typeof(ETipo));
             this.ActualizarDgv((venta) => venta.ProductoAsociado.Tipo == (ETipo)this.cmbTipo.SelectedItem);
+            this.txtCantidad.Text = "0";
+
 
         }
 
@@ -44,6 +47,9 @@ namespace EcomerceTech
 
             this.LimpiarDgv();
 
+            int cantidad = 0;
+            double total = 0;
+
             foreach (Venta item in this.comercio.Ventas)
             {
                 if (condicionTipo(item))
@@ -57,10 +63,14 @@ namespace EcomerceTech
 
                     );
 
+                    cantidad += item.Cantidad;
+                    total += (item.Cantidad * item.ProductoAsociado.Precio);
+
                 }
-
-
             }
+
+            this.txtCantidad.Text = cantidad.ToString();
+            this.txtTotal.Text = total.ToString("F2");
         }
 
         private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
@@ -78,6 +88,16 @@ namespace EcomerceTech
         private void FormVentas_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.menu.Show();
+        }
+
+        private void dgvVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var rowCurrently = dgvVentas.CurrentRow;
+
+            string nombre = rowCurrently.Cells[0].Value.ToString();
+
+
+            
         }
     }
 }

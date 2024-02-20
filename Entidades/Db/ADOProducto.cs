@@ -191,7 +191,7 @@ namespace Entidades.Db
 
             try
             {
-                string query = "DELETE FROM * WHERE id=@id";
+                string query = "DELETE FROM Producto WHERE id=@id";
 
                 using (SqlConnection sqlConnection = new SqlConnection(ADOProducto.stringConnection))
                 {
